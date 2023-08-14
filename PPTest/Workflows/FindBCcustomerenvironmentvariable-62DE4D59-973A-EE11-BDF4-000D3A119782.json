@@ -1,0 +1,87 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_dynamicssmbsaas_1": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "new_BusinessCentralconnectionreference"
+        },
+        "api": {
+          "name": "shared_dynamicssmbsaas"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "BcEnvironment (new_BcEnvironment)": {
+          "defaultValue": "POWERAPPS",
+          "type": "String",
+          "metadata": {
+            "schemaName": "new_BcEnvironment"
+          }
+        },
+        "BcCompany (new_BcCompany)": {
+          "defaultValue": "dc50d5e8-f9c9-ed11-94cc-000d3a220b2f",
+          "type": "String",
+          "metadata": {
+            "schemaName": "new_BcCompany"
+          }
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "1fccb97c-c299-42ec-be4f-edbcd56716a5"
+          },
+          "type": "Request",
+          "kind": "Button",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            }
+          }
+        }
+      },
+      "actions": {
+        "Find_records_(V3)": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "560a5479-82d2-4cd6-90fd-e220d2b7eea8"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_dynamicssmbsaas_1",
+              "operationId": "GetItemsV3",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_dynamicssmbsaas"
+            },
+            "parameters": {
+              "bcenvironment": "@parameters('BcEnvironment (new_BcEnvironment)')",
+              "company": "@parameters('BcCompany (new_BcCompany)')",
+              "dataset": "v2.0",
+              "table": "customers"
+            },
+            "authentication": {
+              "type": "Raw",
+              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+            }
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}
