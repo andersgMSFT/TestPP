@@ -3,11 +3,17 @@
   "templateUrl": "https://github.com/microsoft/AL-Go-PTE@PPPreview",
   "powerPlatformSolutionFolder": "PPTest",
   "environments": [
-    "Dev"
+    "Dev",
+    "Dev2"
   ],
   "DeployToDev": {
     "environmentName": "PowerApps",
     "companyId": "dc50d5e8-f9c9-ed11-94cc-000d3a220b2f",
     "ppEnvironmentUrl": "https://org1316ffa2.crm.dynamics.com/"
+  },
+  "DeployToDev2": {
+    "environmentName": "TestSandbox",
+    "companyId": "927fd0e5-c22f-ee11-bdfe-6045bde9b7c2",
+    "ppEnvironmentUrl": "https://orge3b7806d.crm.dynamics.com/"
   }
 }
