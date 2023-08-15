@@ -1,5 +1,5 @@
 <environmentvariabledefinition schemaname="new_BcCompany">
-  <defaultvalue>test</defaultvalue>
+  <defaultvalue>dc50d5e8-f9c9-ed11-94cc-000d3a220b2f</defaultvalue>
   <displayname default="BcCompany">
     <label description="BcCompany" languagecode="1033" />
   </displayname>
