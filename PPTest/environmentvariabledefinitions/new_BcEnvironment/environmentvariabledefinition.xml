@@ -1,5 +1,5 @@
 <environmentvariabledefinition schemaname="new_BcEnvironment">
-  <defaultvalue>test</defaultvalue>
+  <defaultvalue>PowerApps</defaultvalue>
   <displayname default="BcEnvironment">
     <label description="BcEnvironment" languagecode="1033" />
   </displayname>
