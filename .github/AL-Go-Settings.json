@@ -12,7 +12,7 @@
     "ppEnvironmentUrl": "https://org1316ffa2.crm.dynamics.com/"
   },
   "DeployToDev2": {
-    "environmentName": "TestSandbox",
+    "environmentName": "TestSandbøx",
     "companyId": "927fd0e5-c22f-ee11-bdfe-6045bde9b7c2",
     "ppEnvironmentUrl": "https://orge3b7806d.crm.dynamics.com/"
   }
